@@ -1,14 +1,19 @@
 import React from "react";
+import SearchBar from "../SearchBar/SearchBar";
+import Playlist from "../Playlist/Playlist";
+import SearchResults from "../SearchResults/SearchResults";
 
 const App = () => {
 
     return (
         <div>
             <h1>Jammming</h1>
-            <div name="searchbar">
-                <div>
-                    <p>asd</p>
-                    <p>asd</p>
+            <div>
+                <SearchBar />
+                <div /*result and playlist */>
+                    <SearchResults />   
+                    <Playlist />
+                                     
                 </div>
             </div>
 
