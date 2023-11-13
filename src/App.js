@@ -2,32 +2,25 @@ import logo from "./logo.svg";
 import "./App.css";
 import Results from "./components/Results";
 import { useState } from "react";
+import Searching from "./components/Searching";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
-  const [inputValue, setInputValue] = useState("");
-
-
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
+  const handleSearch = (term) => {
+    setSearchTerm(term);
   };
-
-  const handleSearch = () => {
-    console.log('button clicked!');
-    console.log('Search term:', inputValue);
-    setSearchTerm(inputValue);
-  };
+  
 
   return (
     <div className="App">
       {/*Body*/}
       <div>
-        <h1>Jammming</h1>
+        <h1 className="header">Jammming</h1>
       </div>
       <div>
-        <input type="text" value={inputValue} onChange={handleInputChange} placeholder="text here" />
-        <button onClick={handleSearch} >Search </button>
+        <Searching onSearch={handleSearch} />
       </div>
+
       <div className="columns">
         <div>
           <Results searchTerm={searchTerm} />

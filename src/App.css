@@ -1,18 +1,21 @@
 .App {
   text-align: center;
-  display: block;
-  justify-self: center;
-  align-self: center;
+  display: inline-block;
+  width: fit-content;
 }
+.App header{
+  text-align: center;
 
+}
 .columns {
   display: inline-flex;
-  width: max-content;
+  width: 100%;
+  
 }
 
 .columns div {
   justify-items: center;
   margin: 50px;
   align-items: center;
-  
+  justify-content: space-around;
 }
