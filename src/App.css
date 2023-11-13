@@ -1,21 +1,65 @@
+body {
+  background-color: #222; /* Dark background color */
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #ffffff; /* Adjusted text color to a muted gray */
+}
+
 .App {
   text-align: center;
-  display: inline-block;
-  width: fit-content;
+  padding: 20px;
 }
-.App header{
-  text-align: center;
 
+.header {
+  color: #ffffff; /* Muted blue-gray color */
 }
+
 .columns {
-  display: inline-flex;
-  width: 100%;
-  
+  display: flex;
+  justify-content: space-between;
 }
 
-.columns div {
-  justify-items: center;
-  margin: 50px;
-  align-items: center;
-  justify-content: space-around;
+.Searching {
+  margin-bottom: 10px;
+}
+
+.inputField {
+  width: 200px;
+  padding: 8px;
+  margin-right: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #777; /* Muted gray background */
+  color: #ddd;
+}
+
+.searchButton {
+  padding: 8px 16px;
+  background-color: #888; /* Slightly darker muted gray */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.ResultsContainer {
+  width: 45%;
+}
+
+.PlaylistInput {
+  width: 100%;
+  padding: 8px;
+  margin-top: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #777; /* Muted gray background */
+  color: #ddd;
+}
+
+h3 {
+  color: #ffffff; /* Muted blue-gray color */
+}
+
+hr {
+  border-top: 1px solid #ffffff; /* Muted gray border */
 }

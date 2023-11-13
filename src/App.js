@@ -1,32 +1,30 @@
-import logo from "./logo.svg";
-import "./App.css";
-import Results from "./components/Results";
-import { useState } from "react";
-import Searching from "./components/Searching";
+import React, { useState } from 'react';
+import Searching from './components/Searching';
+import Results from './components/Results';
+import './App.css';
 
 function App() {
-  const [searchTerm, setSearchTerm] = useState("");
+  const [searchTerm, setSearchTerm] = useState('');
+
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
-  
 
   return (
     <div className="App">
-      {/*Body*/}
+      {/* Body */}
       <div>
         <h1 className="header">Jammming</h1>
       </div>
-      <div>
+      <div className="Searching">
         <Searching onSearch={handleSearch} />
       </div>
-
       <div className="columns">
-        <div>
+        <div className="ResultsContainer">
           <Results searchTerm={searchTerm} />
         </div>
         <div>
-          <input placeholder="playlist name "></input>
+          <input className="inputField" placeholder="playlist name" />
         </div>
       </div>
     </div>
