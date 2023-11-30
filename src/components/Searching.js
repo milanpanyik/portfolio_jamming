@@ -1,9 +1,7 @@
 import Results from "./Results";
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
-
-const Searching = ({onSearch}) => {
-  
+const Searching = ({ onSearch }) => {
   const [inputValue, setInputValue] = useState("");
 
   const handleInputChange = (event) => {
@@ -12,19 +10,21 @@ const Searching = ({onSearch}) => {
 
   const handleSearch = () => {
     onSearch(inputValue);
-    setInputValue('');
+    setInputValue("");
   };
-  return( <div>
-    <input
-      type="text"
-      value={inputValue}
-      onChange={handleInputChange}
-      placeholder="Help me I'm stuck!"
-    />
-    <button onClick={handleSearch}>Searchyboi</button>
+  return (
     <div>
+      <div>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={handleInputChange}
+          placeholder="Help me I'm stuck!"
+        />
+      </div>
+      <button onClick={handleSearch}>Searchyboi</button>
+      <div></div>
     </div>
-  </div>
   );
 };
 

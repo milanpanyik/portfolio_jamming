@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const Results = ({searchTerm}) => {
+const Results = ({ searchTerm, selectTrack }) => {
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
@@ -23,6 +23,7 @@ const Results = ({searchTerm}) => {
           title: obj.title,
           artist: obj.artist.name,
           album: obj.album.title,
+          id: obj.id,
         }));
         setSongs(songsData);
       } catch (error) {
@@ -37,9 +38,10 @@ const Results = ({searchTerm}) => {
       <h3>Results</h3>
       {songs.map((song, index) => (
         <div key={index}>
-          <h4>{song.title}</h4>
+          <h3>{song.title}</h3>
           <p>{song.artist}</p>
-          <p>{song.album}</p>
+          <p>{song.album}</p> 
+          <h1 onClick={e=>{selectTrack(song)}}>+</h1>
           <hr />
         </div>
       ))}
