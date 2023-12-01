@@ -1,18 +1,24 @@
-import React from "react";
+import React, {useState} from "react";
+import PlaylistCard from "./PlaylistCard";
+const Playlist = ({tracks, deleteTrack, onSave }) => {
+  const [playlistName, setPlaylistName] = useState('')
 
-const Playlist = ({tracks, deleteTrack }) => {
+
+  const handlePlaylistName = (event) => {
+      setPlaylistName(event.target.value);
+  };
   
-  
+  const handlePlaylistSave = () => {
+    onSave(playlistName);
+    setPlaylistName("");
+  };
+
   return (
  <>
-  <div>
-      {tracks && tracks.map(track => (
-          <div key={track.id}>
-            <h3>{track.title}</h3>
-            <p>{track.artist}</p>
-            <p>{track.album}</p>
-            <h1 onClick={e=> {deleteTrack(track.id)}}>-</h1>
-           </div> ))}
+  <div className="PlaylistContainer"> 
+      <input type="text" value={playlistName} onChange={handlePlaylistName} className="PlaylistInput input::placeholder" placeholder="Enter Playlist Name Here"  />
+        <PlaylistCard tracks={tracks} deleteTrack={deleteTrack}/>
+        <button onClick={handlePlaylistSave} className="searchButton">Save Playlist</button>
     </div></>
   );
 

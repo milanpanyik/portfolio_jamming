@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Searching from "./components/Searching";
 import Results from "./components/Results";
 import "./App.css";
@@ -7,15 +7,27 @@ import Playlist from "./components/Playlist";
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTracks, setSelectedTracks] = useState([]);
+
+    
+
+
+  const handleSave = (playlistName) => {
+    alert(`${playlistName} saved, thank you, good day!`);
+    setSelectedTracks([]);
+
+  };
   
   const handleSearch = (term) => {
     setSearchTerm(term);
   };
 
   const handleTrackSelection = (track) => {
-    console.log(selectedTracks);
-    const newSelectedTracks = [...selectedTracks, track];
-    setSelectedTracks(newSelectedTracks);
+    if(!selectedTracks.includes(track)){
+      const newSelectedTracks = [...selectedTracks, track];
+       setSelectedTracks(newSelectedTracks);
+    }
+      
+   
   };
 
   const handleTrackDeletion = (trackId) => {
@@ -27,14 +39,19 @@ function App() {
   return (
     <div className="App">
       {/* Body */}
-
-      <h1 className="header">Jammming</h1>
-
-      <Searching onSearch={handleSearch} />
       <div>
-      <Results searchTerm={searchTerm} selectTrack={handleTrackSelection} />
+        <h1 className="header">Jam<span>mmmmmmmmmmmmmmmmmmmmmmmm</span>ing</h1>
 
-      <Playlist  tracks={selectedTracks}  deleteTrack={handleTrackDeletion} />
+        <Searching className="Searching" onSearch={handleSearch} />
+      </div>
+
+      <div className="columns">
+        <div>
+        <Results   searchTerm={searchTerm}  selectTrack={handleTrackSelection} />
+        </div>
+        <div>
+        <Playlist onSave={handleSave} tracks={selectedTracks}  deleteTrack={handleTrackDeletion} />
+        </div>
       </div>
     </div>
   );

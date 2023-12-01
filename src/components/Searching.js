@@ -16,13 +16,14 @@ const Searching = ({ onSearch }) => {
     <div>
       <div>
         <input
+          className="inputField"
           type="text"
           value={inputValue}
           onChange={handleInputChange}
-          placeholder="Help me I'm stuck!"
+          placeholder="Search for  a song"
         />
       </div>
-      <button onClick={handleSearch}>Searchyboi</button>
+      <button className="searchButton" onClick={handleSearch}>Searchyboi</button>
       <div></div>
     </div>
   );

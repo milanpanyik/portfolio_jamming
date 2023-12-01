@@ -1,8 +1,8 @@
 body {
-  background-color: #222; /* Dark background color */
+  background-color: #222;
   margin: 0;
   font-family: 'Arial', sans-serif;
-  color: #ffffff; /* Adjusted text color to a muted gray */
+  color: #ffffff;
 }
 
 .App {
@@ -11,12 +11,13 @@ body {
 }
 
 .header {
-  color: #ffffff; /* Muted blue-gray color */
+  color: #ffffff;
 }
 
 .columns {
-  display:flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .Searching {
@@ -24,43 +25,86 @@ body {
 }
 
 .inputField {
-  width: 200px;
+  width: auto;
+  margin: 0 auto;
   padding: 8px;
-  margin-right: 8px;
   border: none;
   border-radius: 4px;
-  background-color: #777; /* Muted gray background */
+  background-color: #777;
   color: #ddd;
 }
 
 .searchButton {
-  padding: 8px 16px;
-  background-color: #888; /* Slightly darker muted gray */
+  width: auto;
+  padding: 8px;
+  background-color: #888;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  margin-top: 10px;
+}
+.SavePlaylistButton {
+  width: auto;
+  padding: 8px;
+  background-color: #888;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .ResultsContainer {
-  width: 45%;
+  width: 100%;
+  height: 600px;
+  overflow-y: auto;
   margin: auto;
 }
 
-.PlaylistInput {
+/* Styling the scrollbar */
+.ResultsContainer::-webkit-scrollbar {
+  width: 12px;
+}
+
+.ResultsContainer::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 6px;
+}
+
+.PlaylistContainer {
   width: 100%;
+  margin: auto;
+  
+  height: auto;
+}
+
+.PlaylistInput {
+  width: 60%;
   padding: 8px;
-  margin-top: 8px;
+  margin: 10px;
   border: none;
   border-radius: 4px;
-  background-color: #777; /* Muted gray background */
+  background-color: #777;
+  color: #ddd;
+  
+}
+
+.TrackCard {
+  width: 100%;
+  padding: 8px;
+  border-bottom: 1px solid #777;
+
+}
+
+input::placeholder {
   color: #ddd;
 }
 
 h3 {
-  color: #ffffff; /* Muted blue-gray color */
+  color: #ffffff;
 }
 
 hr {
-  border-top: 1px solid #ffffff; /* Muted gray border */
+  border-top: 1px solid #ffffff;
 }

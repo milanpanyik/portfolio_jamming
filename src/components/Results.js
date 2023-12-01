@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import ResultCard from "./ResultCard";
 
-const Results = ({ searchTerm, selectTrack }) => {
+const Results = ({ searchTerm, selectTrack}) => {
   const [songs, setSongs] = useState([]);
 
   useEffect(() => {
@@ -34,17 +35,9 @@ const Results = ({ searchTerm, selectTrack }) => {
   }, [searchTerm]);
 
   return (
-    <div>
-      <h3>Results</h3>
-      {songs.map((song, index) => (
-        <div key={index}>
-          <h3>{song.title}</h3>
-          <p>{song.artist}</p>
-          <p>{song.album}</p> 
-          <h1 onClick={e=>{selectTrack(song)}}>+</h1>
-          <hr />
-        </div>
-      ))}
+    <div className="ResultsContainer">
+      <h2>Results</h2>
+      <ResultCard songs={songs} selectTrack={selectTrack}/>
     </div>
   );
 };
